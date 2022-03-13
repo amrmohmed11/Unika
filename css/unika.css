@@ -1,0 +1,262 @@
+html {
+  scroll-behavior: smooth;
+}
+/* body {
+  min-height: 500rem;
+} */
+:root {
+  --main-color: #363940;
+  --color-two: gray;
+  --main-font: "Lato", sans-serif;
+  --font-family-two: "Lato", sans-serif;
+  --main-font-weight: 700;
+}
+::-webkit-scrollbar {
+  background: var(--main-color);
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* start navbar */
+.navbar {
+  background-color: var(--main-color) !important;
+}
+.navbar-brand {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-family: var(--main-font);
+}
+.navbar-brand svg {
+  margin: 0 0.5rem;
+}
+.nav-link {
+  text-transform: uppercase;
+}
+/* end nav  */
+/* start home */
+.home {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-color);
+  background-image: url("../img/slider-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+}
+.home h1 {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-family: var(--font-family-two);
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.home .view-more {
+  width: max-content;
+  padding: 0.5rem 1rem;
+  border: 0.1rem solid #fff;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: var(--font-family-two);
+  background-color: transparent;
+  overflow: hidden;
+  z-index: 5;
+  transition: 1s;
+}
+.home button::before {
+  content: "";
+  position: absolute;
+  width: 96%;
+  height: 150%;
+  left: 2%;
+  top: 200%;
+  background-color: #fff;
+  transition: 0.5s;
+  z-index: -1;
+}
+.home button:hover::before {
+  top: 4%;
+}
+.home button:hover {
+  color: black;
+}
+.home .buttons {
+  width: 10%;
+  height: max-content;
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+.home .buttons span {
+  width: 1rem;
+  height: 1rem;
+  background-color: transparent;
+  border: 0.2rem solid gray;
+  transform: rotate(45deg);
+}
+.home .buttons span:hover {
+  border-color: #fff;
+}
+.home .active {
+  border-color: #fff !important;
+}
+.home .active::after {
+  content: "";
+  position: absolute;
+  width: 96%;
+  height: 96%;
+  left: 4%;
+  bottom: 4%;
+  background-color: #fff;
+}
+.title {
+  transition: 1s;
+  user-select: none;
+}
+/* end home */
+/* start our works */
+
+.grid-button {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+}
+.grid-button button {
+  margin: 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  font-family: var(--main-font);
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+.grid-button button:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+.grid-button .active {
+  background-color: var(--main-color);
+  color: #fff;
+}
+.hide {
+  display: none !important;
+}
+.section-title {
+  text-transform: uppercase;
+  padding: 1.5rem;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: 1s;
+}
+.img-cont {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  overflow: hidden;
+  position: relative;
+  transition: 1s;
+}
+.img-cont img {
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+.img-cont:hover img {
+  transform: scale(1.5, 1.5) rotate(5deg);
+}
+.img-cont::after {
+  width: 0%;
+  height: 0%;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  transition: 0.5s;
+  opacity: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0rem;
+  font-weight: 700;
+  font-family: var(--font-family-two);
+  text-transform: uppercase;
+}
+.img-cont:hover::after {
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+}
+.img-cont:nth-child(1)::after {
+  content: "Skull Awesome";
+}
+.img-cont:nth-child(2)::after {
+  content: "Photo Frame";
+}
+.img-cont:nth-child(3)::after {
+  content: "Hand Shots";
+}
+.img-cont:nth-child(4)::after {
+  content: "Night Abstract";
+}
+.img-cont:nth-child(5)::after {
+  content: "Joy of Independence";
+  font-size: 1.5rem;
+}
+.img-cont:nth-child(6)::after {
+  content: "Night Crawlers";
+}
+.img-cont:nth-child(7)::after {
+  content: "Last Motel";
+}
+.img-cont:nth-child(8)::after {
+  content: "Dirk Road";
+}
+.img-cont:nth-child(9)::after {
+  content: "Old is Gold";
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3%;
+  width: 90%;
+  left: 5%;
+  position: absolute;
+  margin: auto;
+}

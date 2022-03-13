@@ -1,0 +1,26 @@
+:root {
+  --main-color: #363940;
+  --color-two: gray;
+}
+.up {
+  padding: 0.5rem 0.7rem;
+  border: 0.3rem solid var(--color-two);
+  position: fixed;
+  right: -200%;
+  bottom: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(45deg);
+  cursor: pointer;
+  z-index: 5;
+  background: transparent;
+  transition: 1s;
+}
+.show {
+  right: 3%;
+}
+.up svg {
+  transform: rotate(-45deg);
+  color: var(--color-two);
+}
